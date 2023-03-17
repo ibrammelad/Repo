@@ -24,7 +24,7 @@
                                 <div class="form-group mb-3">
                                     <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
                                     @error('password')
-                                    <span class="text-danger">{{$message}} </span>
+                                    <span class="text-danger">{{$message->first()}} </span>
                                     @enderror
                                 </div>
 

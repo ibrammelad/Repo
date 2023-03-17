@@ -14,8 +14,11 @@ class LoginAdminController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('dashboard');
         }
-        return back()->with([
-            'errors' => 'The provided credentials do not match our records.',
-        ]);
+        else{
+            return back()->with([
+                'error' => 'The provided credentials do not match our records.',
+            ]);
+        }
+
     }
 }
