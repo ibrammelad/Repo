@@ -10,7 +10,9 @@ class LanguageController extends Controller
 {
     public function showLanguages()
     {
-        $languages = Language::selection()->simplePaginate(4);
+        $languages = Language::selection()
+            ->orderby('created_at' , 'DESC')
+            ->simplePaginate(4);
         return view('pages.Languages.Languages', compact('languages'));
     }
     public function addLanguage ()
@@ -22,6 +24,6 @@ class LanguageController extends Controller
         $input = $request->except("_token");
         $input['img'] = uploadImage('/images' , $request->img);
         Language::create($input);
-        return redirect()->route('showProducts')->with(['success' => "language is added "]);
+        return redirect()->route('showLanguages')->with(['success' => "language is added "]);
     }
 }

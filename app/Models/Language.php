@@ -9,10 +9,10 @@ class Language extends Model
 {
     use HasFactory;
 
-    protected $fillable =["title" , 'slogan' , 'img'];
+    protected $fillable =["title" , 'slogan' , 'img','created_at'];
 
     public function scopeSelection()
     {
-        return $this->select('title' , 'slogan' ,'img');
+        return $this->select('title' , 'slogan' ,'img' , 'created_at');
     }
 }

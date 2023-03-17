@@ -19,7 +19,9 @@ class AdminController extends Controller
 
     public function showAdmins()
     {
-        $admins = Admin::selection()->simplePaginate(8);
+        $admins = Admin::selection()
+            ->orderby('created_at' , 'DESC')
+            ->simplePaginate(8);
         return view('pages.Admins.Admins',compact('admins'));
     }
 

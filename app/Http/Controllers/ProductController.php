@@ -25,7 +25,9 @@ class ProductController extends Controller
 
     public function showProducts()
     {
-        $products = Product::selection()->simplePaginate(8);
+        $products = Product::selection()
+            ->orderby('created_at' , 'DESC')
+            ->simplePaginate(8);
         return view('pages.Products.Products',compact('products'));
     }
 }
