@@ -10,7 +10,7 @@ class RegisterAdminController extends Controller
     {
         if (!Auth::check())
         {
-            return  redirect()->route('getLoginPage')->with(["error" => "The provided credentials do not match our records"]);
+            return  redirect()->route('getLoginPage');
         }
         return view('dashboard');
     }

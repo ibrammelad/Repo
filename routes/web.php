@@ -17,15 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::post('custom-login', \App\Http\Controllers\LoginAdminController::class)->name('loginAdmin');
 /////////////////////////////// a single action controller ////////////////////////////////////////////
 
-
-Route::get('login', [\App\Http\Controllers\RegisterAdminController::class , 'getLoginPage'])->name('getLoginPage');
+/////////////////////////////////////RegisterAdminController//////////////////////////////////////////////////////
+Route::controller(\App\Http\Controllers\RegisterAdminController::class)->group(function (){
+    Route::get('login',  'getLoginPage')->name('getLoginPage');
+    Route::get('/',  'dashboard')->name('dashboard');
+});
+/////////////////////////////////////RegisterAdminController//////////////////////////////////////////////////////
 
 
 Route::middleware('auth')->group(function () {
 
-/////////////////////////////////////RegisterAdminController//////////////////////////////////////////////////////
-    Route::get('/', [\App\Http\Controllers\RegisterAdminController::class, 'dashboard'])->name('dashboard');
-/////////////////////////////////////RegisterAdminController//////////////////////////////////////////////////////
 
 //////////////////////////////////////LanguageController/////////////////////////////////////////////////////
     Route::controller(\App\Http\Controllers\LanguageController::class)
