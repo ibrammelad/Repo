@@ -11,7 +11,7 @@ class LanguageController extends Controller
     public function showLanguages()
     {
         $languages = Language::selection()
-            ->orderby('created_at' , 'DESC')
+            ->sort()
             ->simplePaginate(4);
         return view('pages.Languages.Languages', compact('languages'));
     }

@@ -15,4 +15,9 @@ class Language extends Model
     {
         return $this->select('title' , 'slogan' ,'img' , 'created_at');
     }
+    public function scopeSort()
+    {
+        return  $this->orderby('created_at' , 'DESC');
+
+    }
 }

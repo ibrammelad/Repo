@@ -6,3 +6,7 @@ function uploadImage($folder, $image)
     $image->move(public_path($folder), $new_name);
     return $new_name;
 }
+function get_default_lang()
+{
+    return \Illuminate\Support\Facades\Config::get('app.locale');
+}

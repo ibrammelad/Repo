@@ -14,4 +14,10 @@ class Product extends Model
     {
         return $this->select('name' , 'description' , 'price' , 'img');
     }
+
+    public function scopeSort()
+    {
+      return  $this->orderby('created_at' , 'DESC');
+
+    }
 }

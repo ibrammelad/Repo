@@ -25,7 +25,7 @@ Route::controller(\App\Http\Controllers\RegisterAdminController::class)->group(f
 /////////////////////////////////////RegisterAdminController//////////////////////////////////////////////////////
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->prefix(get_default_lang())->group(function () {
 
 
 //////////////////////////////////////LanguageController/////////////////////////////////////////////////////

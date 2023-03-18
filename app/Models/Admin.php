@@ -47,4 +47,9 @@ class Admin extends  Authenticatable
     {
         return $this->select('name' , 'email');
     }
+    public function scopeSort()
+    {
+        return  $this->orderby('created_at' , 'DESC');
+
+    }
 }
