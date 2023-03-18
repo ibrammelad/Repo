@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
@@ -17,7 +18,12 @@ class Product extends Model
 
     public function scopeSort()
     {
-      return  $this->orderby('created_at' , 'DESC');
+      return  $this->orderby('created_at' , 'DESC')->Language();
 
+    }
+
+    public function scopeLanguage($query)
+    {
+        return $query->where('language_id' , \auth()->user()->language_id);
     }
 }

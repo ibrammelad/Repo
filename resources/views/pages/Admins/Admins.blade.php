@@ -1,9 +1,11 @@
 @extends('layouts')
-@section("content")
+
+@section('content')
     <div class="users-list-table">
         <div class="card">
             <div class="card-body">
                 <div class="page-list">
+                    <span class="u-custom-font u-font-ubuntu "><b><b>Admin with same Language</b></b></span><br>
                     <a href="{{route('Admin')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Add New</a>
                     @include('alerts.success')
                     @include('alerts.errors')

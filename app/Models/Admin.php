@@ -49,7 +49,11 @@ class Admin extends  Authenticatable
     }
     public function scopeSort()
     {
-        return  $this->orderby('created_at' , 'DESC');
+        return  $this->orderby('created_at' , 'DESC')->language();
 
+    }
+    public function scopeLanguage($query)
+    {
+        return $query->where('language_id' , \auth()->user()->language_id);
     }
 }

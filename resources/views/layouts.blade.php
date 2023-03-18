@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html style="font-size: 16px;" >
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Related Products, INTUITIVE">
     <meta name="description" content="">
-    <title>Home</title>
+    <title>Seo Era</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/nicepage.css" media="screen">
-    <link rel="stylesheet" href="css/Home1.css" media="screen">
-    <script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="{{ \Illuminate\Support\Facades\URL::to('/') }}/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="{{ \Illuminate\Support\Facades\URL::to('/') }}/css/Home1.css" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::to('/') }}/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::to('/') }}/js/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.6.16, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -23,7 +23,6 @@
 		"logo": "images/default-logo.png"
 		}
     </script>
-
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
@@ -36,7 +35,7 @@
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         @if(\Illuminate\Support\Facades\Auth::check())
         <a href="{{route('dashboard')}}" class="u-image u-logo u-image-1">
-            <img src="images/download.png" class="u-logo-image u-logo-image-1">
+            <img src="{{\Illuminate\Support\Facades\URL::to('/')}}/images/download.png" class="u-logo-image u-logo-image-1">
         </a>
         @endif
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">

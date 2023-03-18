@@ -6,7 +6,7 @@
     <br>
     <br>
 
-  <h1>Welcome in dashboard Pages</h1>
+  <h1> Welcome in dashboard Pages </h1>
     <br>
     <br>
     <br>

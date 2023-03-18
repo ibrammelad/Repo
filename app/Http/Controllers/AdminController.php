@@ -22,7 +22,7 @@ class AdminController extends Controller
         $admins = Admin::selection()
             ->sort()
             ->simplePaginate(8);
-        return view('pages.Admins.Admins',compact('admins'));
+        return view('Pages.Admins.Admins',compact('admins'));
     }
 
     public function storeAdmin(StoreAdminRequest $request)
